@@ -13,6 +13,14 @@ var taskFormHandler = function(event) {
     name: taskNameInput,
     type: taskTypeInput
   };
+
+  //check if the input is a string
+  if (!taskNameInput || !taskTypeInput) {
+    alert("You need to fill out the task form!");
+    return false;
+  }
+  formEl.reset();
+  
   //send it as an argument to create taskEl
   createTaskEl(taskDataOdj);
 
